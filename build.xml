@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="billetterie" default="help" basedir=".">
+    <target name="help" description="show help">
+        <exec command="vendor/bin/phing -l" passthru="true"/>
+    </target>
+
+    <target name="update:preprod" description="Update project on preprod">
+        <property name="env" value="prod" override="true"/>
+
+        <echo message="Fetch git..."/>
+        <exec command="git pull origin master" passthru="true" checkreturn="true"/>
+        <exec command="rm -rf var/cache/*" passthru="true" checkreturn="true"/>
+        <echo message="Composer install..."/>
+        <exec command="SYMFONY_ENV=prod composer install --no-dev --optimize-autoloader" passthru="true" checkreturn="true"/>
+        <echo message="Clear cache..."/>
+        <exec command="rm -rf var/cache/*" passthru="true" checkreturn="true"/>
+        <echo message="Reset database..."/>
+        <exec command="php bin/console doctrine:schema:update --force -e=prod" passthru="true"/>
+        <echo message="Disable index..."/>
+        <exec command="echo 'User-agent: *${line.separator}Disallow: /' > web/robots.txt" passthru="true"/>
+    </target>
+
+    <target name="update:dev" description="Update project in dev">
+        <echo message="Fetch git..."/>
+        <exec command="git pull origin master" passthru="true" checkreturn="true"/>
+        <echo message="Create database..."/>
+        <exec command="php bin/console doctrine:database:create" passthru="true"/>
+        <echo message="Clear cache..."/>
+        <exec command="rm -rf var/cache/*" passthru="true" checkreturn="true"/>
+        <echo message="Composer install..."/>
+        <exec command="composer install" passthru="true" checkreturn="true"/>
+        <echo message="Clear cache..."/>
+        <exec command="rm -rf var/cache/*" passthru="true" checkreturn="true"/>
+        <echo message="Reset database..."/>
+        <exec command="php bin/console doctrine:schema:update --force" passthru="true"/>
+        <echo message="Load fixtures..."/>
+        <exec command="php bin/console doctrine:fixtures:load" passthru="true" checkreturn="true"/>
+    </target>
+
+    <target name="remote:update:preprod" description="Remotely update the preprod">
+        <exec
+                command="ssh billetterie@151.80.43.132 'cd site; vendor/bin/phing update:preprod'" passthru="true"
+                checkreturn="true"/>
+    </target>
+
+    <target name="tests:schema-validate" description="Validate that the database schema is in sync with the entity classes">
+        <exec command="php bin/console doctrine:schema:validate" checkreturn="true" logoutput="true"/>
+    </target>
+</project>

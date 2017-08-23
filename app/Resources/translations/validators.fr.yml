@@ -1,0 +1,40 @@
+form:
+    event_type:
+        name:
+            not_null: Le nom du type d'événement ne peut pas être nul
+    event:
+        name:
+            not_null: Le nom de l'événement ne peut pas être nul
+        location:
+            not_null: Le lieu de l'événement ne peut pas être nul
+        date:
+            datetime: La date de l'événement saisie ne correspond pas à un format de date valide
+            not_null: La date de l'événement ne peut pas être nulle
+    user:
+        last_name:
+            not_null: Veuillez saisir votre nom
+        first_name:
+            not_null: Veuillez saisir votre prénom
+        birthday_date:
+            date: Veuillez saisir une date avec le bon format
+            lower: Veuillez saisir une date inférieure à aujourd'hui
+    ticket_category:
+        label:
+            not_null: Veuillez saisir le nom de la catégorie
+    ticket:
+        door:
+            not_null: Veuillez saisir la porte
+        floor:
+            not_null: Veuillez saisir l'étage
+        number:
+            not_null: Veuillez saisir le numéro de ticket
+
+    article:
+        title:
+            not_null: Veuillez saisir le titre de l'actualité
+        content:
+            not_null: Veuillez saisir le contenu de l'actualité
+        image:
+            mime_type: Le format n'est pas valide (.png, .jpeg, .gif)
+        file:
+            mime_type: Le format n'est pas valide (.docx, .xlsx, .pdf)

@@ -1,0 +1,69 @@
+/* ==========================================================================
+   @/1 - DatePicker
+   ========================================================================== */
+
+/*
+   @/1 DatePicker COLOR
+   ========================================================================== */
+
+.date-theme .form-control {
+    @include form-control-focus($brand-primary);
+}
+
+.datepicker {
+
+    &.datepicker-dropdown {
+        padding: 4px;
+    }
+
+    table tr td {
+        span.active:active,
+        span.active:hover:active,
+        span.active.disabled:active,
+        span.active.disabled:hover:active,
+        span.active.active,
+        span.active:hover.active,
+        span.active.disabled.active,
+        span.active.disabled:hover.active,
+        &.active.active,
+        &.active.disabled,
+        &.active.disabled.active,
+        &.active.disabled.disabled,
+        &.active.disabled:active,
+        &.active.disabled:hover,
+        &.active.disabled:hover.active,
+        &.active.disabled:hover.disabled,
+        &.active.disabled:hover:active,
+        &.active.disabled:hover:hover,
+        &.active.disabled:hover[disabled],
+        &.active.disabled[disabled],
+        &.active:active,
+        &.active:hover,
+        &.active:hover.active,
+        &.active:hover.disabled,
+        &.active:hover:active,
+        &.active:hover:hover,
+        &.active:hover[disabled],
+        &.active[disabled] {
+            background: $color-base !important;
+            border-color: $color-base !important;
+        }
+
+        span:hover,
+        span.focused,
+        &.today,
+        &.today.disabled,
+        &.today.disabled:hover,
+        &.today:hover {
+            background: $color-dark !important;
+            border-color: $color-dark !important;
+            color: #fff !important;
+        }
+
+        &.day.today{
+            &:before{
+                border-bottom-color: white;
+            }
+        }
+    }
+}

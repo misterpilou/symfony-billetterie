@@ -1,0 +1,30 @@
+/**
+    CONTAINER
+ */
+
+/** Définir la taille du contenant */
+.container {
+    width: auto !important;
+}
+
+/** Définir les marges du contenu */
+.content {
+    margin: 70px 30px 30px 180px;
+}
+
+/** Définir la marge de gauche du contenu pour tout les médias plus petits que la tablette incluse */
+@media(max-width: $screen-tablet) {
+
+    .content {
+        margin-left: 80px !important;
+    }
+}
+
+/** Définir la marge de gauche du contenu pour tout les médias plus petits que la tablette incluse */
+@media(max-width: $screen-phone) {
+
+    .content {
+        margin-left: 50px !important;
+        margin-right: 4px !important;
+    }
+}

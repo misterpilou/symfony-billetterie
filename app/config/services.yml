@@ -1,0 +1,11 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+imports:
+    - { resource: twig.yml }
+    - { resource: manager.yml }
+    - { resource: listener.yml }
+    - { resource: form.yml }
+    - { resource: security_handler.yml }
+    - { resource: repository.yml }
+
+services:

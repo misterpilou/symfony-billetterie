@@ -1,0 +1,25 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_host:     192.168.33.33
+    database_port:     3360
+    database_name:     billetterie
+    database_user:     root
+    database_password: 1234
+    # You should uncomment this if you want use pdo_sqlite
+    # database_path: "%kernel.root_dir%/data.db3"
+
+    mailer_transport:  smtp
+    mailer_host:       smtp.sendgrid.net
+    mailer_user:       cocokrl
+    mailer_password:   ~
+    mailer_port:       ~
+
+    session_prefix:    billetterie
+
+    # A secret key that's used to generate certain security-related tokens
+    secret:            3vmtPv4N9MVv58w6pJ9AfGB92ky22dDT
+
+    smart_developer_email: corentin.regnier59@gmail.com
+    smart_contact_email:    corentin.regnier59@gmail.com

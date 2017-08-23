@@ -1,0 +1,27 @@
+//== VARIABLES
+@import 'admin/base/variables';
+//== BOOTSTRAP CORE
+@import 'bootstrap/bootstrap';
+//== BASE
+@import 'admin/base/mixins';
+@import 'admin/base/icons';
+@import 'admin/base/fonts';
+@import 'admin/base/utilities';
+@import 'admin/base/typography';
+//== LAYOUT
+@import 'admin/layout/header';
+@import 'admin/layout/footer';
+//== COMPONENTS
+@import 'admin/components/article';
+@import 'admin/components/navbar';
+@import 'admin/components/container';
+@import 'admin/components/panel';
+@import 'admin/components/breadcrumb';
+@import 'admin/components/datatable';
+@import 'admin/components/button';
+@import 'admin/components/label';
+@import 'admin/components/datetimepicker';
+@import 'admin/components/form';
+@import 'admin/components/highchart';
+//== FILEINPUT
+@import '../../../../vendor/kartik-v/bootstrap-fileinput/sass/fileinput';

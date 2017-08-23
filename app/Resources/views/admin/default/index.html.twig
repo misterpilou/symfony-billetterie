@@ -1,0 +1,147 @@
+{% extends 'admin/layout.html.twig' %}
+{% block stylesheets_lib %}
+    {{ parent() }}
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="panel">
+        <div class="panel-heading">
+            <div class="panel-title">{{ 'admin.dashboard.title'|trans }}</div>
+        </div>
+        <div class="panel-body">
+            <ul class="nav nav-tabs" role="tablist">
+                {% for object in objects %}
+                    <li role="presentation" class="{{ loop.index == 1 ? "active":"" }}">
+                        <a href="#{{ object.event.slug }}" class="button-chart" aria-controls="{{ object.event.slug }}"
+                           role="tab"
+                           data-toggle="tab">{{ object.event.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="tab-content">
+                {% for object in objects %}
+                    <div role="tabpanel" class="tab-pane {{ loop.index == 1 ? "active":"" }}"
+                         id="{{ object.event.slug }}">
+                        <div class="col-md-6">
+                            <div id="pie-{{ object.event.slug }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="chart-{{ object.event.slug }}">
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block view_js %}
+    <script>
+        $(document).ready(function () {
+            var width = $('.col-md-6').width();
+            {% for object in objects %}
+            Highcharts.chart('chart-{{ object.event.slug }}', {
+                chart: {
+                    type: 'column',
+
+                },
+                title: {
+                    text: '{{ 'admin.dashboard.ticket_count'|trans }} ({{ 'admin.dashboard.total_places'|trans }} : {{ object.bookings + object.bookingsDistributed + object.remainingPlaces }})'
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    type: 'category',
+                    labels: {
+                        rotation: -45,
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: ''
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    pointFormat: '<strong>{point.y} {{ 'admin.dashboard.ticket_lower'|trans }}</strong>'
+                },
+                series: [{
+                    name: '{{ 'admin.dashboard.ticket'|trans }}',
+                    data: [
+                        ['{{ 'admin.dashboard.distributed_tickets'|trans }}', {{ object.bookingsDistributed }}],
+                        ['{{ 'admin.dashboard.booked_tickets'|trans }}', {{ object.bookings }}],
+                        ['{{ 'admin.dashboard.remaining_tickets'|trans }}', {{ object.remainingPlaces }}]
+                    ],
+                    dataLabels: {
+                        enabled: true,
+                        rotation: -90,
+                        color: '#FFFFFF',
+                        align: 'right',
+                        format: '{point.y}',
+                        y: 10,
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                }]
+            });
+            pie = Highcharts.chart('pie-{{ object.event.slug }}', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: '{{ 'admin.dashboard.title'|trans }}'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Categories',
+                    colorByPoint: true,
+                    data: [
+                        {
+                            name: '{{ 'admin.dashboard.distributed_tickets'|trans }}',
+                            y: {{ object.bookingsDistributed ? object.bookingsDistributed : 0 }}
+                        },
+                        {
+                            name: '{{ 'admin.dashboard.booked_tickets'|trans }}',
+                            y: {{ object.bookings ? object.bookings : 0 }}
+                        },
+                        {
+                            name: '{{ 'admin.dashboard.remaining_tickets'|trans }}',
+                            y: {{ object.remainingPlaces ? object.remainingPlaces : 0 }}
+                        }]
+                }]
+            });
+            {% endfor %}
+        });
+    </script>
+{% endblock %}

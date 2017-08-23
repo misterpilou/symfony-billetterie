@@ -1,0 +1,29 @@
+/* ==========================================================================
+   @/1 - Form
+   ========================================================================== */
+
+/*
+   @/1 Form control focus color
+   ========================================================================== */
+
+.form-control:focus {
+    border-color: $color-base;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $color-base;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $color-base;
+}
+
+.form-group-datetimepicker{
+    position: relative;
+}
+
+.alert-danger {
+    margin-top: 10px;
+}
+
+.row {
+    margin-bottom: 5px
+}
+
+.select2{
+    margin-bottom: 15px;
+}

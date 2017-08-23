@@ -1,0 +1,124 @@
+/**
+    NAVBAR
+ */
+
+/** Marge de la navbar */
+.navbar-nav {
+    margin: 0;
+}
+
+/** Espacement intérieur du liens de la navbar-nav */
+.navbar-nav > li > a {
+    padding-top: 16.5px;
+    padding-bottom: 16.5px;
+
+    /** Couleur de ces liens lorsqu'on les survoles ou qu'on les focus */
+    &:hover, &:focus {
+        color: $color-lighter;
+    }
+}
+
+/** Réécriture de la navbar par défaut de bootstrap */
+.navbar {
+    background: $gray-dark;
+    height: 100%;
+    margin: 0;
+    max-width: 150px;
+    width: 150px;
+    border-radius: 0;
+    left: 0;
+    border: 0;
+    position: fixed;
+    top: 52.5px;
+
+    /** Réécriture des éléments de la navbar par défaut */
+    .nav > li {
+        border-bottom: 1px $color-base solid;
+
+        /** Aucune bordure (du bas) pour le dernière éléments de la navbar */
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+}
+
+/** Réécriture de la Navbar Collapsable */
+.navbar-collapse {
+    padding: 0;
+    border-top: 0;
+}
+
+/**
+*Définir les couleurs et du radius des bordures des liens de la navbar par défaut
+*lors que on suvolle ou qu'elle est active ou qu'on focus
+*/
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background-color: $color-base;
+    border-radius: 0;
+}
+
+/** Par défaut aucune border-radius pour les liens de menus */
+.nav-pills > li > a {
+    border-radius: 0;
+
+    &:hover, &:focus {
+        color: $color-lighter;
+    }
+}
+
+/** Lorsque deux éléments li se superpose, on enlève la marge du dessus */
+.nav-stacked > li + li {
+    margin-top: 0;
+}
+
+/** dropdown-menu */
+.dropdown-menu {
+    min-width: 100%;
+    padding: 10px;
+
+    li {
+
+        a:hover, a:focus {
+            color: $color-lighter;
+            background-color: $color-base;
+        }
+    }
+}
+
+/** Lorsque le menu dropdown est ouvert, on definit la couleur du texte du dropdown parent */
+.open > a {
+    color: $color-lighter;
+}
+
+/** Définition responsive de dropdown menu (tout les médias en dessous de la tablette incluse) */
+@media (max-width: $screen-tablet) {
+    .navbar-nav .open .dropdown-menu {
+        position: absolute;
+        float: left;
+        width: auto;
+        background-color: #fff;
+        right: 0;
+        left: auto;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    }
+}
+
+/** Redéfinition de la navbar pour les médias en dessous de la tablette incluse */
+@media (max-width: $screen-tablet) {
+    .navbar {
+        width: auto !important;
+
+        top: 52px;
+
+        li > a {
+
+            /** Disparition du texte du menu (on ne laisse que les icones */
+            .text-sidebar {
+                display: none !important;
+            }
+        }
+    }
+}

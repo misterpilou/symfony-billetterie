@@ -1,0 +1,64 @@
+app:
+    resource: "@AppBundle/Controller/"
+    prefix: /
+    type:     annotation
+
+admin:
+    resource: "@AppBundle/Controller/Admin"
+    prefix: /admin
+    type:     annotation
+
+fos_user_security_login:
+    defaults:  { _controller: FOSUserBundle:Security:login, _method: POST }
+    path: /connexion
+
+fos_user_security_check:
+    defaults:  { _controller: FOSUserBundle:Security:check, _method: POST }
+    path: /verification
+
+fos_user_security_logout:
+    defaults:  { _controller: FOSUserBundle:Security:logout, _method: POST }
+    path: /deconnexion
+
+fos_user_registration_register:
+    defaults:  { _controller: FOSUserBundle:Registration:register, _method: POST }
+    path: /inscription/
+
+fos_user_registration_check_email:
+    defaults:  { _controller: FOSUserBundle:Registration:checkEmail, _method: POST }
+    path: /inscription/validation-email
+
+fos_user_registration_confirm:
+    defaults:  { _controller: FOSUserBundle:Registration:confirm, _method: POST }
+    path: /inscription/confirmation/{token}
+
+fos_user_registration_confirmed:
+    defaults:  { _controller: FOSUserBundle:Registration:confirmed, _method: POST }
+    path: /inscription/confirmee
+
+fos_user_resetting_request:
+    defaults:  { _controller: FOSUserBundle:Resetting:request, _method: POST }
+    path: /mot-de-passe-perdu/demande
+
+fos_user_resetting_send_email:
+    defaults:  { _controller: FOSUserBundle:Resetting:sendEmail, _method: POST }
+    path: /mot-de-passe-perdu/envoie_email
+
+fos_user_resetting_check_email:
+    defaults:  { _controller: FOSUserBundle:Resetting:checkEmail, _method: POST }
+    path: /mot-de-passe-perdu/validation_email
+
+fos_user_resetting_reset:
+    defaults:  { _controller: FOSUserBundle:Resetting:reset, _method: POST }
+    path: /mot-de-passe-perdu/reinitialiser/{token}
+
+fos_user_profile_show:
+    defaults:  { _controller: FOSUserBundle:Profile:show, _method: POST }
+    path: /profil/
+
+fos_user_profile_edit:
+    defaults:  { _controller: FOSUserBundle:Profile:edit, _method: POST }
+    path: /profil/modifier
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"

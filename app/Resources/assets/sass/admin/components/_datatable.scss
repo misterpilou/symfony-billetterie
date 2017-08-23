@@ -1,0 +1,43 @@
+/**
+ *  Datatable overwrite
+ */
+
+table.dataTable.nowrap th, table.dataTable.nowrap td {
+    white-space: normal !important;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    white-space: normal !important;
+}
+
+div.dataTables_wrapper div.dataTables_filter label {
+    white-space: normal !important;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+    width: 147px !important;
+}
+
+/* Modification couleur page active pagination */
+.dataTables_wrapper {
+    .pagination {
+        .paginate_button.active {
+            a {
+                background-color: $color-base;
+                border-color: $color-base;
+            }
+        }
+    }
+}
+
+/* Forcer la taille de la colonne des actions */
+.column-actions {
+    min-width: 92px !important;
+    text-align: center;
+}
+
+/* Forcer la taille de la colonne des actions de la liste des réservations */
+.column-actions-booking {
+    min-width: 129px !important;
+    text-align: center;
+}

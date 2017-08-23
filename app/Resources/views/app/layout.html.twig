@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ 'app.seo.title'|trans }}
+{% endblock %}
+{% block meta_description %}
+    {{ 'app.seo.description'|trans }}
+{% endblock %}
+{% block current_stylesheet %}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+    <header id="header">
+
+        {# Inclusion du template pour le menu de l'entête #}
+        {% include 'app/common/_sidebar.html.twig' %}
+
+    </header>
+{% endblock %}
+{% block container %}
+
+
+    <div class="content">
+
+        {% if app.user %}
+            {# Template Knp du breadcrumb #}
+            {{ knp_menu_render('AppBundle:AppBuilder:breadcrumb', {'template': 'app/common/_breadcrumb.html.twig',
+                'currentClass': 'active'}) }}
+        {% endif %}
+        {# Template flash message #}
+        {% block flash_message %}
+            {% include 'app/common/_flash.html.twig' %}
+        {% endblock %}
+
+        {# Block pour le contenu d'une vue #}
+        {% block content %}
+        {% endblock %}
+
+    </div>
+{% endblock %}
+
+{% block current_script %}
+    <script src="{{ asset('js/app.min.js') }}"></script>
+{% endblock %}

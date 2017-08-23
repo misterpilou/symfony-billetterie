@@ -1,0 +1,383 @@
+common:
+    menu:
+        logout: Déconnexion
+        back_homepage: Retour sur le site
+    button:
+        save: Enregistrer
+        edit: Modifier
+        back: Retour
+        delete: Supprimer
+        add: Ajouter
+        export: Exporter
+        connection: Connexion
+        back_without_save: Retour sans sauvegarder
+    error:
+        403:
+            title: Erreur 403
+            content: Vos droits d'accès ne vous permettent pas d'accéder à cette page
+        404:
+            title: Erreur 404
+            content: Page non trouvée
+        500:
+            title: Erreur 500
+            content: Erreur interne du serveur, merci de contacter un administrateur
+        other:
+            title: Erreur
+            content: Contacter un administrateur
+    data_table:
+        actions: Actions
+        id : ID
+    obligatory_fields: >
+        * Champs obligatoires
+
+admin:
+    title: Billetterie Admin
+    actions: Actions
+    seo:
+        title: Billetterie | Administration
+        description: Billetterie Symfony projet scolaire, partie administration
+    nav:
+        home: Accueil
+        log: Registre
+        event_type:
+            title: Types d'événement
+            index: Liste des types d'évènement
+            create: Ajouter un type d'évènement
+            edit: Modifier un type d'évènement
+        event:
+            title: Evénements
+            index: Liste des événements
+            create: Ajouter un événement
+            edit: Modifier un événement
+        article:
+            title: Actualités
+            index: Liste des actualités
+            create: Ajouter une actualité
+            edit: Modifier une actualité
+        ticket_category:
+            title: Catégories de ticket
+            index: Liste des catégories de ticket
+            create: Ajouter une catégorie de ticket
+            edit: Modifier une catégorie de ticket
+        booking:
+            title: Réservations
+            index : Liste des réservations
+            create : Ajouter une réservation
+            edit : Modifier une réservation
+        users:
+            title: Utilisateurs
+    log:
+        title: Registre
+        type: Type
+        message: Message
+        created_at: Date - Heure
+        user_id: Id Utilisateur
+        user: Nom - Prénom Utilisateur
+    sidebar:
+        administration: Administration
+    event_type:
+        title : Type d'événement
+        create: Créer un type d'événement
+        edit: Éditer un type d'événement
+        delete_confirm : Etes-vous sûr de vouloir supprimer le type d\'événement selectionné ?
+    ticket_category:
+        title: Catégorie de ticket
+        create: Créer une catégorie de ticket
+        edit: Editer une catégorie de ticket
+        delete_confirm: Etes-vous sûr de vouloir supprimer la catégorie de ticket sélectionnée ?
+    event:
+        title : Evénement
+        date: Date - Heure
+        location: Lieu
+        event_type: Type d'événement
+        create: Créer un événement
+        edit: Éditer un événement
+        delete_confirm : Etes-vous sûr de vouloir supprimer l\'événement selectionné ?
+    article:
+        title : Actualité
+        content: Contenu
+        image: Image
+        file: Fichier
+        create: Créer une actualité
+        edit: Éditer une actualité
+        delete_confirm : Etes-vous sûr de vouloir supprimer l\'actualité selectionnée ?
+    booking:
+        title : Réservation
+        create: Créer une réservation
+        edit: Éditer une réservation
+        delete_confirm : Etes-vous sûr de vouloir supprimer la réservation selectionnée ?
+        title: Réservations
+        user:
+            name: Bénéficiaire
+            email: Courriel
+        ticketCategory:
+            label: Catégorie de ticket
+        ticket:
+            title: Ticket
+            add: Ajouter un ticket
+        select_event_type: Sélectionner un type d'événement
+        export_all: Exporter toutes les réservations
+        import: Importer des réservations
+    form:
+        event_type:
+            name: Nom du type d'événement
+        ticket_category:
+            label: Nom de la catégorie du ticket
+            name: Nom du type d'événement
+        event:
+            name: Nom de l'événement
+            date: Date de l'événement
+            location: Lieu de l'événement
+            event_type: Type d'événement
+        article:
+            title: Titre
+            content: Contenu
+            image: Image
+            file: Fichier
+        stock:
+            title: Stock des tickets
+            category: Catégorie de ticket
+            label_quantity: Nombre maximum de places pour la catégorie
+            initial_quantity: Quantité de places
+        booking:
+            title : Réservations
+            event: Nom de l'événement
+            ticket_category: Catégorie de ticket
+            main_user: Bénéficiaire principal
+            secondary_user: Bénéficiaire secondaire
+        ticket:
+            floor: Etage de la place
+            door: Porte de la place
+            number: Numéro de ticket
+            delete: Supprimer le ticket
+            main_user: Adresse mail du bénéficiaire principal
+            secondary_user: Adresse mail du bénéficiaire secondaire
+    dashboard:
+        title: Proportion de billets distribués
+        ticket_count: Nombre de billets
+        distributed_tickets: Billets distribués
+        total_places: Places totales
+        booked_tickets: Billets réservés
+        remaining_tickets: Billets restants
+        ticket: Billets
+        ticket_lower: billets
+    user:
+        title: Liste des utilisateurs
+        firstName: Prénom
+        lastName: Nom
+        email: Adresse e-mail
+        delete_confirm: Etes-vous sûr de vouloir désactiver l'utilisateur selectionné ?
+app:
+    title: Billetterie
+    seo:
+        title: Billetterie | Accueil
+        description: Billetterie Symfony projet scolaire
+    nav:
+        home: Accueil
+        article: Actualités
+        login: Connexion
+        register: Inscription
+    form:
+        registration:
+            gender: Genre
+            last_name: Nom
+            first_name: Prénom
+            birthday: Date de naissance
+            address: Adresse
+            zip_code: Code postal
+            city: Ville
+            phone: Téléphone
+            card: Numéro de pièce d'identité
+        beneficiary:
+            email: Email
+    user:
+        login:
+            title: Connexion
+            username: Identifiant
+            password: Mot de passe
+            remember_me: Se souvenir de moi
+            forgotten_password: Mot de passe oublié
+            nav: Connexion
+        register:
+            title: Inscription
+            confirmed: Votre compte %username% est maintenant activé.
+            check_email: >
+                Un e-mail a été envoyé à l'adresse %email%. Il contient un lien d'activation sur lequel il
+                vous faudra cliquer afin d'activer votre compte.
+            back: Accéder au site
+        resetting:
+            title: Mot de passe perdu
+            check_email: >
+                Un e-mail a été envoyé. Il contient un lien sur lequel il vous faudra cliquer pour réinitialiser
+                votre mot de passe. Remarque : Vous ne pouvez demander un nouveau mot de passe que toutes les
+                %tokenLifetime% heures.
+
+                Si vous ne recevez pas un email, vérifiez votre dossier spam ou essayez à nouveau.
+            request:
+                username: Nom d'utilisateur ou adresse e-mail
+                submit: Réinitialiser le mot de passe
+            reset: Modifier le mot de passe
+        profile:
+            edit:
+                title: Édition du profil
+            show:
+                title: Votre profil
+                email: Adresse mail
+                phone: N° de téléphone
+                birthday_date: Date de naissance
+                name: Nom complet
+                address: Adresse complète
+                id_number: N° d'identité
+                edit: Éditer votre profil
+    civility:
+        man: Monsieur
+        woman: Madame
+
+log:
+    user:
+        login:
+            title: Connexion
+            message: S'est connecté à la billetterie
+        logout:
+            title: Déconnexion
+            message: S'est déconnecté de la billetterie
+        delete:
+            title: Suppression utilisateur
+            message: Un utilisateur a été supprimé
+    article:
+        add:
+            title: Ajout article
+            message: Un article a été ajouté dans la base de données
+        edit:
+            title: Édition article
+            message: Un article a été édité dans la base de données
+        remove:
+            title: Article supprimé
+            message: Un article a été supprimé de la base de données
+    ticket_category:
+        add:
+            title: Ajout catégorie de ticket
+            message: Une catégorie de ticket a été ajoutée dans la base de données
+        edit:
+            title: Édition catégorie de ticket
+            message: Une catégorie de ticket a été éditée dans la base de données
+        remove:
+            title: Catégorie de ticket supprimé
+            message: Une catégorie de ticket a été supprimée de la base de données
+    export:
+        title: Export
+        message: Des réservations ont été exportées
+    import:
+        title: Import
+        message: Des réservations ont été importées
+
+flash:
+    admin:
+        event_type:
+            delete:
+                success: Le type d'événement a bien été supprimé
+                danger: Erreur, le type d'événement n'a pas pu être supprimé
+            add:
+                success: Le type d'événement a bien été ajouté
+                danger: Erreur, le type d'événement n'a pas été ajouté
+            edit:
+                success: Le type d'événement a bien été modifié
+                danger: Erreur, le type d'événement n'a pas été modifié
+        article:
+            delete:
+                success: L'actualité a bien été supprimée
+                danger: Erreur, l'actualité n'a pas pu être supprimée
+            add:
+                success: L'actualité a bien été ajoutée
+                danger: Erreur, l'actualité n'a pas été ajoutée
+            edit:
+                success: L'actualité a bien été modifiée
+                danger: Erreur, l'actualité n'a pas été modifiée
+        ticket_category:
+            delete:
+                success: La catégorie du ticket a bien été supprimée
+                danger: Erreur, la catégorie du ticket n'a pas pu être supprimée
+            add:
+                success: La catégorie du ticket a bien été ajoutée
+                danger: Erreur, la catégorie du ticket n'a pas été ajoutée
+            edit:
+                success: La catégorie du ticket a bien été modifiée
+                danger: Erreur, la catégorie du ticket n'a pas été modifiée
+                success: Le type d'événement a bien été modifié
+                danger: Erreur, le type d'événement n'a pas été modifié
+        event:
+            delete:
+                success: L'événement a bien été supprimé
+                danger: Erreur, l'événement n'a pas pu être supprimé
+            add:
+                success: L'événement a bien été ajouté
+                danger: Erreur, l'événement n'a pas été ajouté
+            edit:
+                success: L'événement a bien été modifié
+                danger: Erreur, l'événement n'a pas été modifié
+        booking:
+            export:
+                danger: Une erreur est survenue lors de l'export
+            delete:
+                success: La réservation a bien été supprimée
+                danger: Erreur, la réservation n'a pas pu être supprimée
+            add:
+                success: La réservation a bien été ajoutée
+                danger: Erreur, la réservation n'a pas été ajoutée
+            edit:
+                success: La réservation a bien été modifiée
+                danger: Erreur, la réservation n'a pas été modifiée
+                danger: Erreur, l'export d'événement n'a pas fonctionné
+            insufficient_stock:
+                danger : Le stock est insuffisant pour cet évènement et cette catégorie de ticket
+            no_stock:
+                danger : Aucun stock n'est prévu pour cet événement et cette catégorie de ticket
+            no_tickets:
+                danger : Vous devez au moins créer un ticket pour votre réservation
+        user:
+            delete:
+                success: L'utilisateur a bien été désactivé
+                danger: Erreur, l'utilisateur n'a pas pu être désactivé
+
+export:
+    title: Export réservations
+    description: Exportation des réservations - format excel
+    keywords: export reservation billetterie
+    category: Export
+    data:
+        beneficiary_type: Type bénéficiaire
+        last_name: Nom
+        first_name: Prénom
+        email: Adresse mail
+        birth_date: Date d'anniversaire
+        phone: Téléphone
+        address: Adresse
+        city: Ville
+        zip_code: Code postale
+        identity_number: N° d'identité
+        event: Évènement
+        category_ticket: Catégorie de ticket
+        ticket_status: État ticket
+        door: Porte
+        bookings: Réservations
+        floor: Étage
+        place_number: N° place
+        main: Principal
+        secondary: Secondaire
+        distributed: Distribué
+        not_distributed: Non distribué
+
+import:
+    success: Les réservations ont bien été importées
+    label: Fichier CSV
+    error:
+        default: Erreur à la ligne
+        missing_data: certaines informations ne sont pas renseignées
+        main_user: le bénéficiaire secondaire n'est pas rattaché à un bénéficiaire principal
+        flush: Les données n\'ont pas pu être sauvegardées
+        categ_event: la catégorie de ticket et/ou l'événement sont incorrects
+        file_extension: L'extension du fichier est incorrect, veuillez importer un fichier .csv
+        email: Le format de l\'adresse e-mail est incorrect
+        zip_code: Le format du code postal est incorrect
+        phone_number: Le format du numéro de téléphone est incorrect
+
